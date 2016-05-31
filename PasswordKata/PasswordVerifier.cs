@@ -27,6 +27,7 @@ namespace PasswordKata
             {
                 if (c >= 'A' && c <= 'Z')
                 {
+                    isContainUpperCase = true;
                     validConditions++;//3rd condition
                     break;
                 }
@@ -48,9 +49,14 @@ namespace PasswordKata
                     break;
                 }
             }
-            if (!isContainUpperCase)
+            if (isContainUpperCase)
+            {
                 if (validConditions < 3)
-                    return false;
+                { return false; }
+            }
+            else
+                return false;
+
             return true;
         }
     }
